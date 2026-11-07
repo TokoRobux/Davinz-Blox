@@ -72,7 +72,7 @@ nav svg,nav .rbx{display:block;margin:0 auto 3px;font-size:24px}
 <div class="card" onclick="op('g')"><div class="ph"><img src="gamepass.jpg" alt=""><div class="tg"><span class="h">HOT</span></div></div><h3 data-t="cardg"></h3><small data-t="v6"></small><div class="dash" data-t="shop"></div></div>
 </div></div>
 <div class="wrap"><h2 data-t="catT"></h2><p class="sub" data-t="catS"></p>
-<div class="cat"><div class="ct" onclick="op('u')">Robux<span class="ch">›</span><i class="rbx"></i><em data-t="cheap"></em></div><div class="ct" onclick="op('g')">Gamepass<span class="ch">›</span><i class="rbx"></i><em data-t="ez"></em></div></div></div>
+<div class="cat"><div class="ct" onclick="op('u')">Robux<span class="ch">›</span><i class="rbx"></i><em data-t="cheap"></em></div><div class="ct" onclick="op('g')">Gamepass<span class="ch">›</span><i class="rbx"></i><em data-t="ez"></em></div><div class="ct" onclick="op('b')"><span style="display:block;padding-right:30px">Brookhaven Passes</span><span class="ch">›</span><i class="rbx"></i><em data-t="newb"></em></div></div></div>
 <div class="ban"><div class="wrap"><h2 data-t="banT"></h2><p data-t="banS"></p></div></div>
 </section>
 <div class="wrap">
@@ -80,7 +80,7 @@ nav svg,nav .rbx{display:block;margin:0 auto 3px;font-size:24px}
 <h2 id="bt" style="margin-top:8px"></h2><p class="sub" id="bs"></p>
 <div class="steps"><div id="s1" class="on" data-t="p1"></div><div id="s2" data-t="p2"></div><div id="s3" data-t="p3"></div></div>
 <div class="box"><label data-t="pick"></label><div class="packs" id="packs"></div></div>
-<div class="box"><label for="amt" data-t="own"></label><input class="f" id="amt" type="number" inputmode="numeric" step="10"><input type="range" id="rg" step="10"><div class="err" id="e1"></div></div>
+<div class="box" id="ownBox"><label for="amt" data-t="own"></label><input class="f" id="amt" type="number" inputmode="numeric" step="10"><input type="range" id="rg" step="10"><div class="err" id="e1"></div></div>
 <div class="box"><label for="usr" data-t="usrL"></label><div style="display:flex;gap:8px"><input class="f" id="usr" placeholder="Davinz123" autocomplete="off" maxlength="20"></div><div class="hint" data-t="uh"></div><div class="err" id="e2"></div>
 <div id="gp" style="display:none;margin-top:10px"><label for="lnk" data-t="lnkL"></label><input class="f" id="lnk" placeholder="https://www.roblox.com/game-pass/..."><div class="hint" id="gh"></div><div class="err" id="e3"></div></div></div>
 <div class="box"><div class="row"><span data-t="sA"></span><b id="rA">-</b></div><div class="row"><span data-t="sU"></span><b id="rU">-</b></div><div class="row"><span data-t="sE"></span><b id="rE"></b></div><div class="row"><span data-t="sP"></span><b id="rP">-</b></div>
@@ -90,10 +90,13 @@ nav svg,nav .rbx{display:block;margin:0 auto 3px;font-size:24px}
 <section id="acc" class="page"><h2 data-t="accT"></h2>
 <div id="authF" class="box"><div class="tabs"><button id="tin" class="on" data-t="login" onclick="tab('in')"></button><button id="tup" data-t="reg" onclick="tab('up')"></button></div>
 <label for="an" data-t="nm"></label><input class="f" id="an" autocomplete="username" maxlength="20"><label for="ap" style="margin-top:10px" data-t="pw"></label><input class="f" id="ap" type="password" autocomplete="current-password"><div class="err" id="ae"></div><button class="btn" id="ab" onclick="doAuth()"></button><div class="hint" data-t="accN"></div></div>
-<div id="accI" class="box" style="display:none"><h3 id="hi" style="margin:0 0 8px"></h3><button class="btn2" data-t="myO" onclick="go('ord')"></button><a class="btn2" data-t="help" href="https://wa.me/message/QORLQPTZWILEJ1" target="_blank" rel="noopener"></a><button class="btn2" data-t="out" onclick="logout()"></button></div></section>
+<div id="accI" class="box" style="display:none"><h3 id="hi" style="margin:0 0 8px"></h3><button class="btn2" data-t="myO" onclick="go('ord')"></button><a class="btn2" data-t="help" href="https://wa.me/message/QORLQPTZWILEJ1" target="_blank" rel="noopener"></a><button class="btn2" data-t="out" onclick="logout()"></button></div><div id="own" style="display:none"><h3 style="margin:16px 0 8px">Panel Owner</h3>
+<div class="box"><b>Statistik</b><div class="row"><span>Pesanan hari ini</span><b id="oT">0</b></div><div class="row"><span>Omzet hari ini</span><b id="oR">0</b></div><div class="row"><span>Total pesanan</span><b id="oA">0</b></div><div class="hint">Hanya menghitung pesanan yang dibuat di HP ini.</div></div>
+<div class="box"><b>Ubah harga</b><div id="oP"></div><button class="btn" onclick="cpy()">Salin kode harga</button><div class="hint">Setelah menyalin: buka file harga.js di GitHub, tekan ikon pensil, hapus semua isinya, tempel, lalu Commit changes. Harga baru baru berlaku untuk semua orang setelah itu.</div></div></div></section>
 </div>
 <nav><a id="n1" class="on" onclick="go('home')"><svg class="i"><use href="#hm"/></svg><span data-t="home"></span></a><a id="n2" onclick="op(mode)"><i class="rbx"></i><span data-t="topup"></span></a><a id="n3" onclick="go('cart')"><svg class="i"><use href="#ct"/></svg><span data-t="cart"></span><b id="cb">0</b></a><a id="n4" onclick="go('ord')"><svg class="i"><use href="#rc"/></svg><span data-t="ord"></span></a><a id="n5" onclick="go('acc')"><svg class="i"><use href="#us"/></svg><span id="n5t"></span></a></nav>
 <div id="toast"></div>
+<script src="harga.js"></script>
 <script>
 var WA="https://wa.me/message/QORLQPTZWILEJ1",UR=/^[A-Za-z0-9_]{3,20}$/,P1="https://users.roproxy.com/v1/usernames/users",P2="https://thumbnails.roproxy.com/v1/users/avatar-headshot?userIds=";
 var $=function(i){return document.getElementById(i)},rp=function(n){return"Rp"+n.toLocaleString("id-ID")};
@@ -119,58 +122,4 @@ sent:["Bukti terkirim, menunggu dicek","Proof sent, awaiting check"],unp:["Menun
 login:["Masuk","Sign in"],reg:["Daftar","Sign up"],nm:["Nama akun Davinzblox","Davinzblox account name"],pw:["Kata sandi (min. 6)","Password (min. 6)"],eLog:["Nama atau kata sandi salah.","Wrong name or password."],eEx:["Nama sudah dipakai.","Name already taken."],
 eNm:["Nama 3–20 huruf/angka/_.","Name: 3–20 letters/numbers/_."],ePw:["Kata sandi minimal 6 karakter.","Password must be at least 6 characters."],hi:["Halo, {n}!","Hi, {n}!"],out:["Keluar","Sign out"],help:["Bantuan WhatsApp","WhatsApp Help"],
 accN:["Akun disimpan di perangkat ini.","Accounts are stored on this device."],myO:["Lihat Pesanan","View Orders"],accT:["Akun","Account"],ordd:["Pesanan dibuat! Upload bukti transfer di sini.","Order created! Upload your payment proof here."],added:["Masuk keranjang!","Added to cart!"],
-home:["Beranda","Home"],topup:["Top Up","Top Up"],cart:["Keranjang","Cart"],ord:["Pesanan","Orders"],acc:["Masuk","Sign in"],accI:["Akun","Account"]};
-var M={u:{min:80,pts:[[80,14000],[100,16000],[160,28000],[200,32000],[240,42000],[300,46000],[320,55000],[400,62000],[500,76000],[600,92000]]},
-g:{min:100,pts:[[100,15000],[200,29000],[300,43000],[400,55000],[500,69000],[600,83000]]}};
-var L=+(LS("dz_l")||0),mode="u",amt=0,after=null,am="in",db=LS("dz_u")||{},ses=LS("dz_s");if(!db[ses])ses=null;
-function t(k,o){var s=T[k][L];for(var x in o)s=s.replace("{"+x+"}",o[x]);return s}
-function me(){return ses?db[ses]:null}function save(){LS("dz_u",db);LS("dz_s",ses)}
-function price(n,m){var p=M[m||mode].pts;for(var i=0;i<p.length;i++){if(p[i][0]==n)return p[i][1];if(p[i][0]>n){var a=p[i-1],b=p[i];return Math.round((a[1]+(b[1]-a[1])*(n-a[0])/(b[0]-a[0]))/100)*100}}return p[p.length-1][1]}
-function toast(m){var e=$("toast");e.textContent=m;e.classList.add("on");setTimeout(function(){e.classList.remove("on")},3500)}
-function H(s){if(window.crypto&&crypto.subtle)return crypto.subtle.digest("SHA-256",new TextEncoder().encode(s)).then(function(b){return Array.from(new Uint8Array(b)).map(function(x){return("0"+x.toString(16)).slice(-2)}).join("")});return Promise.resolve(btoa(s))}
-var NAV={home:"n1",buy:"n2",cart:"n3",ord:"n4",acc:"n5"};
-function go(p){for(var k in NAV){$(k).classList.toggle("on",k==p);$(NAV[k]).classList.toggle("on",k==p)}if(p=="cart")rCart();if(p=="ord")rOrd();if(p=="acc")rAcc();scrollTo(0,0)}
-function op(m){mode=m;$("usr").value="";$("lnk").value="";$("amt").value="";$("rg").value=M[m].min;$("packs").innerHTML="";
-M[m].pts.forEach(function(p){var b=document.createElement("button");b.className="pack";b.dataset.n=p[0];b.innerHTML="<b><i class='rbx'></i>"+p[0]+"</b>"+rp(p[1]);b.onclick=function(){$("amt").value=p[0];upd()};$("packs").appendChild(b)});upd();go("buy")}
-function upd(){var m=M[mode],n=parseInt($("amt").value)||0,u=$("usr").value.trim();amt=n;
-$("bt").textContent=t("card"+mode);$("bs").textContent=t("s"+mode);$("rE").textContent=t("tm"+mode);$("amt").min=$("rg").min=m.min;$("amt").max=$("rg").max=600;$("amt").placeholder=m.min;$("gp").style.display=mode=="g"?"block":"none";
-if(n)$("rg").value=Math.min(600,Math.max(m.min,n));document.querySelectorAll(".pack").forEach(function(b){b.classList.toggle("sel",b.dataset.n==n)});
-var ok=n>=m.min&&n<=600;$("e1").textContent=n&&!ok?t("eAmt",{a:m.min}):"";$("rA").textContent=ok?n+" Robux":"-";$("rP").textContent=ok?rp(price(n)):"-";$("rU").textContent=u||"-";
-$("gh").textContent=mode=="g"&&ok?t("gh",{n:Math.ceil(n/.7)}):"";
-$("s1").className=ok?"ok":"on";$("s2").className=ok&&UR.test(u)?"ok":ok?"on":"";$("s3").className=ok&&UR.test(u)?"on":""}
-$("amt").oninput=upd;$("rg").oninput=function(){$("amt").value=this.value;upd()};$("usr").oninput=upd;
-function form(){var m=M[mode];upd();if(amt<m.min||amt>600){$("e1").textContent=t("eAmt",{a:m.min});return}
-var u=$("usr").value.trim();if(!UR.test(u)){$("e2").textContent=t("eUsr");return}
-$("e2").textContent="";
-var l=$("lnk").value.trim();if(mode=="g"&&!/roblox\.com/i.test(l)){$("e3").textContent=t("eLnk");return}$("e3").textContent="";
-return{id:Date.now(),mode:mode,amt:amt,price:price(amt),rb:u,img:"",link:mode=="g"?l:""}}
-function need(f){if(me())return true;toast(t("need"));after=f;tab("in");go("acc");return false}
-function cadd(){var o=form();if(!o||!need(cadd))return;me().cart.push(o);save();bdg();toast(t("added"))}
-function place(){var o=form();if(!o||!need(place))return;mk([o])}
-function wt(o){return"ID: "+o.oid+"\nRobux "+(o.mode=="u"?"via username":"via gamepass")+"\nJumlah: "+o.amt+" Robux\nTotal: "+rp(o.price)+"\nUsername Roblox: "+o.rb+(o.link?"\nLink gamepass: "+o.link:"")}
-function mk(a){var m=me();a.forEach(function(o){o.oid="DZ"+String(o.id).slice(-6);o.t=Date.now();o.proof="";m.orders.unshift(o)});
-var tx="Halo kak, aku mau pesan:\n\n"+a.map(wt).join("\n\n");try{navigator.clipboard.writeText(tx)}catch(e){}
-window.open(WA,"_blank");save();bdg();toast(t("ordd"));go("ord")}
-function bdg(){var n=me()?me().cart.length:0;$("cb").textContent=n;$("cb").style.display=n?"block":"none"}
-function av(o){return"<span class='av' style='display:grid;place-items:center;font-size:32px;color:var(--pri)'><i class='rbx'></i></span>"}
-function rCart(){var m=me(),h=$("cl");if(!m){h.innerHTML="<div class='box'>"+t("need")+" <a class='lk' onclick=\"go('acc')\">"+t("login")+"</a></div>";return}
-if(!m.cart.length){h.innerHTML="<div class='box'>"+t("cartE")+"</div>";return}var s=0;
-h.innerHTML=m.cart.map(function(o){s+=o.price;return"<div class='box'><div class='avc'>"+av(o)+"<div><b>"+o.amt+" Robux</b> · "+t("card"+o.mode)+"<br>@"+esc(o.rb)+"<br><b>"+rp(o.price)+"</b></div></div><button class='btn2' onclick='rmv("+o.id+")'>"+t("rm")+"</button></div>"}).join("")+"<div class='box'><div class='row'><span>"+t("sP")+"</span><b>"+rp(s)+"</b></div><button class='btn' onclick='co()'>"+t("co")+"</button></div>"}
-function rmv(id){var m=me();m.cart=m.cart.filter(function(x){return x.id!=id});save();bdg();rCart()}
-function co(){var m=me();if(!m||!m.cart.length)return;var a=m.cart;m.cart=[];mk(a)}
-function rOrd(){var m=me(),h=$("ol");if(!m){h.innerHTML="<div class='box'>"+t("need")+" <a class='lk' onclick=\"go('acc')\">"+t("login")+"</a></div>";return}
-h.innerHTML=m.orders.length?m.orders.map(function(o){return"<div class='box'><div class='avc'>"+av(o)+"<div><b>#"+o.oid+"</b> <span class='chip "+(o.proof?"ok":"")+"'>"+t(o.proof?"sent":"unp")+"</span><br>"+o.amt+" Robux · "+t("card"+o.mode)+"<br><b>"+rp(o.price)+"</b> · @"+esc(o.rb)+"<div class='hint'>"+new Date(o.t).toLocaleString(L?"en-GB":"id-ID")+"</div></div></div>"+(o.proof?"<img class='pf' src='"+o.proof+"' alt=''><a class='btn2' href='"+WA+"' target='_blank' rel='noopener'>"+t("pwa")+"</a>":"")+"<label class='btn2'>"+t("upl")+"<input type='file' accept='image/*' hidden onchange='proof("+o.id+",this)'></label></div>"}).join(""):"<div class='box'>"+t("ordE")+"</div>"}
-function proof(id,inp){var f=inp.files[0];if(!f)return;var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){var s=Math.min(1,900/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=im.width*s;c.height=im.height*s;c.getContext("2d").drawImage(im,0,0,c.width,c.height);
-me().orders.filter(function(x){return x.id==id})[0].proof=c.toDataURL("image/jpeg",.6);save();rOrd();toast(t("pok"))};im.src=r.result};r.readAsDataURL(f)}
-function tab(k){am=k;$("tin").className=k=="in"?"on":"";$("tup").className=k=="up"?"on":"";$("ab").textContent=t(k=="in"?"login":"reg")}
-function doAuth(){var n=$("an").value.trim(),p=$("ap").value,e=$("ae");e.textContent="";
-if(!UR.test(n)){e.textContent=t("eNm");return}if(p.length<6){e.textContent=t("ePw");return}var key="u_"+n.toLowerCase();
-H(key+":"+p+":dz").then(function(h){if(am=="up"){if(db[key]){e.textContent=t("eEx");return}db[key]={n:n,h:h,cart:[],orders:[]}}else{var u=db[key];if(!u||u.h!=h){e.textContent=t("eLog");return}}
-ses=key;save();$("ap").value="";bdg();rAcc();if(after){go("buy");var f=after;after=null;f()}else go("home")})}
-function logout(){ses=null;save();bdg();rAcc()}
-function rAcc(){var m=me();$("authF").style.display=m?"none":"block";$("accI").style.display=m?"block":"none";$("n5t").textContent=t(m?"accI":"acc");if(m)$("hi").textContent=t("hi",{n:m.n});tab(am)}
-function sw(){L=L?0:1;LS("dz_l",L);aL()}
-function aL(){document.documentElement.lang=L?"en":"id";document.querySelectorAll("[data-t]").forEach(function(e){e.textContent=t(e.dataset.t)});document.querySelectorAll("[data-p]").forEach(function(e){e.placeholder=t(e.dataset.p)});$("lg").textContent=L?"EN":"ID";upd();rCart();rOrd();rAcc()}
-$("q").onkeydown=function(e){if(e.key=="Enter")op(/gamepass/i.test(this.value)?"g":"u")};
-M.u.pts.length;$("rg").value=80;aL();bdg();
-</script></body></html>
+cardb:["Brookhaven Passes","Brookhaven Passes"],sb:["Pilih pass Brookhaven. Cukup username Roblox kamu.","Pick a Brookhaven pass. Just your Roblox username."],tmb:["Setelah pembayaran d
